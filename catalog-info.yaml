@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ntbd2h8ae-nodejs-gitops
+  description: This is GitOps manifest for ntbd2h8ae-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ntbd2h8ae-nodejs
+    backstage.io/kubernetes-id: ntbd2h8ae-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ntbd2h8ae-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ntbd2h8ae-nodejs
